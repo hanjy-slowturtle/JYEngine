@@ -1,5 +1,5 @@
 #pragma once
-#include "CommonInclude.h"
+#include "JYGameObject.h"
 
 namespace jy
 {
@@ -17,8 +17,7 @@ namespace jy
 	private:
 		HWND mHwnd;
 		HDC mHdc;
-		float mSpeed;
-		float mX;
-		float mY;
+		GameObject mPlayer;
+		std::vector<GameObject> mPlayerList;
 	};
 }

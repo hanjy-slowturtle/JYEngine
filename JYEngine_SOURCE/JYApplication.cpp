@@ -6,9 +6,6 @@ namespace jy
 	Application::Application()
 		: mHwnd(nullptr)
 		, mHdc(nullptr)
-		, mSpeed(0.0f)
-		, mX(0.0f)
-		, mY(0.0f)
 	{
 	}
 	Application::~Application()
@@ -19,6 +16,19 @@ namespace jy
 	{
 		mHwnd = hwnd;
 		mHdc = GetDC(hwnd);
+		mPlayerList = std::vector<GameObject>();
+		GameObject mPlayer1 = GameObject();
+		mPlayer1.SetPosition(0, 0);
+		mPlayer1.SetType(0);
+		mPlayer1.SetKey(VK_UP, VK_DOWN, VK_LEFT, VK_RIGHT);
+		mPlayer1.SetColor(RGB(0, 0, 255));
+		mPlayerList.push_back(mPlayer1);
+		GameObject mPlayer2 = GameObject();
+		mPlayer2.SetPosition(300, 300);
+		mPlayer2.SetType(1);
+		mPlayer2.SetKey('W', 'S', 'A', 'D');
+		mPlayer2.SetColor(RGB(255, 0, 0));
+		mPlayerList.push_back(mPlayer2);
 	}
 	void Application::Run()
 	{
@@ -28,42 +38,21 @@ namespace jy
 	}
 	void Application::Update()
 	{
-		mSpeed += 0.01f;
-
-		if (GetAsyncKeyState(VK_LEFT) & 0x8000)
+		for(int i = 0; i < 2; i++)
 		{
-			mX -= 0.01f;
+			mPlayerList[i].Update();
 		}
-		if (GetAsyncKeyState(VK_RIGHT) & 0x8000)
-		{
-			mX += 0.01f;
-		}
-		if (GetAsyncKeyState(VK_UP) & 0x8000)
-		{
-			mY -= 0.01f;
-		}
-		if (GetAsyncKeyState(VK_DOWN) & 0x8000)
-		{
-			mY += 0.01f;
-		}
+		//mPlayer.Update();
 	}
 	void Application::LateUpdate()
 	{
 	}
 	void Application::Render()
 	{
-		// 파랑 브러쉬 생성
-		HBRUSH blueBrush = CreateSolidBrush(RGB(0, 0, 255));
-
-		// 파랑 브러쉬 DC에 선택, 그리고 흰색 브러쉬 반환값 저장
-		HBRUSH prevBrush = (HBRUSH)SelectObject(mHdc, blueBrush);
-
-		Rectangle(mHdc, 100 + mX, 100 + mY, 200 + mX, 200 + mY);
-
-		// 원래 브러쉬 선택
-		SelectObject(mHdc, prevBrush);
-
-		// 파랑 브러쉬 삭제
-		DeleteObject(blueBrush);
+		for (int i = 0; i < 2; i++)
+		{
+			mPlayerList[i].Render(mHdc);
+		}
+		//mPlayer.Render(mHdc);
 	}
 }
