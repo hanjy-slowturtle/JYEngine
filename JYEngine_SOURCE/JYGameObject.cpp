@@ -7,10 +7,10 @@ namespace jy
 		mX = 0;
 		mY = 0;
 		mType = 0;
-		mUpKey = VK_UP;
-		mDownKey = VK_DOWN;
-		mLeftKey = VK_LEFT;
-		mRightKey = VK_RIGHT;
+		mUpKey = eKeyCode::UP;
+		mDownKey = eKeyCode::DOWN;
+		mLeftKey = eKeyCode::LEFT;
+		mRightKey = eKeyCode::RIGHT;
 		mColor = RGB(0, 0, 255);
 	}
 	GameObject::~GameObject()
@@ -18,19 +18,19 @@ namespace jy
 	}
 	void GameObject::Update()
 	{
-		if (GetAsyncKeyState(mLeftKey) & 0x8000)
+		if (Input::GetKey(mLeftKey))
 		{
 			mX -= 0.01f;
 		}
-		if (GetAsyncKeyState(mRightKey) & 0x8000)
+		if (Input::GetKey(mRightKey))
 		{
 			mX += 0.01f;
 		}
-		if (GetAsyncKeyState(mUpKey) & 0x8000)
+		if (Input::GetKey(mUpKey))
 		{
 			mY -= 0.01f;
 		}
-		if (GetAsyncKeyState(mDownKey) & 0x8000)
+		if (Input::GetKey(mDownKey))
 		{
 			mY += 0.01f;
 		}

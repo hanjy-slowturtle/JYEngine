@@ -1,5 +1,5 @@
 #pragma once
-#include "CommonInclude.h"
+#include "jyInput.h"
 
 namespace jy
 {
@@ -21,7 +21,7 @@ namespace jy
 		{
 			mType = type;
 		}
-		void SetKey(int upKey, int downKey, int leftKey, int rightKey)
+		void SetKey(eKeyCode upKey, eKeyCode downKey, eKeyCode leftKey, eKeyCode rightKey)
 		{
 			mUpKey = upKey;
 			mDownKey = downKey;
@@ -36,10 +36,10 @@ namespace jy
 		float mX;
 		float mY;
 		int mType;
-		int mUpKey;
-		int mDownKey;
-		int mLeftKey;
-		int mRightKey;
+		eKeyCode mUpKey;
+		eKeyCode mDownKey;
+		eKeyCode mLeftKey;
+		eKeyCode mRightKey;
 		COLORREF mColor;
 	};
 }

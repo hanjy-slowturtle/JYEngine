@@ -1,5 +1,5 @@
 #include "JYApplication.h"
-#include "CommonInclude.h"
+#include "jyInput.h"
 
 namespace jy
 {
@@ -16,19 +16,13 @@ namespace jy
 	{
 		mHwnd = hwnd;
 		mHdc = GetDC(hwnd);
-		mPlayerList = std::vector<GameObject>();
-		GameObject mPlayer1 = GameObject();
-		mPlayer1.SetPosition(0, 0);
-		mPlayer1.SetType(0);
-		mPlayer1.SetKey(VK_UP, VK_DOWN, VK_LEFT, VK_RIGHT);
-		mPlayer1.SetColor(RGB(0, 0, 255));
-		mPlayerList.push_back(mPlayer1);
-		GameObject mPlayer2 = GameObject();
-		mPlayer2.SetPosition(300, 300);
-		mPlayer2.SetType(1);
-		mPlayer2.SetKey('W', 'S', 'A', 'D');
-		mPlayer2.SetColor(RGB(255, 0, 0));
-		mPlayerList.push_back(mPlayer2);
+		mPlayerList = std::vector<GameObject>(2);
+		mPlayerList[1].SetPosition(300, 300);
+		mPlayerList[1].SetType(1);
+		mPlayerList[1].SetKey(eKeyCode::W, eKeyCode::S, eKeyCode::A, eKeyCode::D);
+		mPlayerList[1].SetColor(RGB(255, 0, 0));
+
+		Input::Initialize();
 	}
 	void Application::Run()
 	{
@@ -38,6 +32,8 @@ namespace jy
 	}
 	void Application::Update()
 	{
+		Input::Update();
+
 		for(int i = 0; i < 2; i++)
 		{
 			mPlayerList[i].Update();
