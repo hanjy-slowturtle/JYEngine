@@ -35,18 +35,18 @@ namespace jy
 
 		static bool GetKeyDown(eKeyCode code)
 		{
-			return mKeys[(UINT)code].state == eKeyState::Down;
+			return Keys[(UINT)code].state == eKeyState::Down;
 		}
 		static bool GetKeyUp(eKeyCode code)
 		{
-			return mKeys[(UINT)code].state == eKeyState::Up;
+			return Keys[(UINT)code].state == eKeyState::Up;
 		}
 		static bool GetKey(eKeyCode code)
 		{
-			return mKeys[(UINT)code].state == eKeyState::Pressed;
+			return Keys[(UINT)code].state == eKeyState::Pressed;
 		}
 
 	private:
-		static std::vector<Key> mKeys;
+		static std::vector<Key> Keys;
 	};
 }

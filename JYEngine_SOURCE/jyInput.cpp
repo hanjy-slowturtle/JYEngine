@@ -2,7 +2,7 @@
 
 namespace jy
 {
-	std::vector<Input::Key> Input::mKeys = {};
+	std::vector<Input::Key> Input::Keys = {};
 
 	int ASCII[(UINT)eKeyCode::End] =
 	{
@@ -21,38 +21,38 @@ namespace jy
 			key.state = eKeyState::None;
 			key.keyCode = (eKeyCode)i;
 
-			mKeys.push_back(key);
+			Keys.push_back(key);
 		}
 	}
 
 	void Input::Update()
 	{
-		for (size_t i = 0; i < mKeys.size(); i++)
+		for (size_t i = 0; i < Keys.size(); i++)
 		{
 			// 키가 눌렸다
 			if (GetAsyncKeyState(ASCII[i]) & 0x8000)
 			{
-				if (mKeys[i].bPressed == true)
+				if (Keys[i].bPressed == true)
 				{
-					mKeys[i].state = eKeyState::Pressed;
+					Keys[i].state = eKeyState::Pressed;
 				}
 				else
 				{
-					mKeys[i].state = eKeyState::Down;
+					Keys[i].state = eKeyState::Down;
 				}
-				mKeys[i].bPressed = true;
+				Keys[i].bPressed = true;
 			}
 			else // 키가 안 눌렸다
 			{
-				if (mKeys[i].bPressed == true)
+				if (Keys[i].bPressed == true)
 				{
-					mKeys[i].state = eKeyState::Up;
+					Keys[i].state = eKeyState::Up;
 				}
 				else
 				{
-					mKeys[i].state = eKeyState::None;
+					Keys[i].state = eKeyState::None;
 				}
-				mKeys[i].bPressed = false;
+				Keys[i].bPressed = false;
 			}
 		}
 	}

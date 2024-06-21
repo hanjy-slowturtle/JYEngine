@@ -1,5 +1,6 @@
 #include "JYApplication.h"
 #include "jyInput.h"
+#include "jyTime.h"
 
 namespace jy
 {
@@ -23,6 +24,7 @@ namespace jy
 		mPlayerList[1].SetColor(RGB(255, 0, 0));
 
 		Input::Initialize();
+		Time::Initialize();
 	}
 	void Application::Run()
 	{
@@ -33,6 +35,7 @@ namespace jy
 	void Application::Update()
 	{
 		Input::Update();
+		Time::Update();
 
 		for(int i = 0; i < 2; i++)
 		{
@@ -45,6 +48,8 @@ namespace jy
 	}
 	void Application::Render()
 	{
+		Time::Render(mHdc);
+
 		for (int i = 0; i < 2; i++)
 		{
 			mPlayerList[i].Render(mHdc);

@@ -1,4 +1,5 @@
 #include "JYGameObject.h"
+#include "jyTime.h"
 
 namespace jy
 {
@@ -18,21 +19,22 @@ namespace jy
 	}
 	void GameObject::Update()
 	{
+		const float speed = 100.0f * Time::DeltaTime();
 		if (Input::GetKey(mLeftKey))
 		{
-			mX -= 0.01f;
+			mX -= speed;
 		}
 		if (Input::GetKey(mRightKey))
 		{
-			mX += 0.01f;
+			mX += speed;
 		}
 		if (Input::GetKey(mUpKey))
 		{
-			mY -= 0.01f;
+			mY -= speed;
 		}
 		if (Input::GetKey(mDownKey))
 		{
-			mY += 0.01f;
+			mY += speed;
 		}
 	}
 	void GameObject::LateUpdate()
