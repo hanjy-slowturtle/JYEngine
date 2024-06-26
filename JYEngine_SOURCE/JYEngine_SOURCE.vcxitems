@@ -16,20 +16,26 @@
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)CommonInclude.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)jyApplication.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)jyComponent.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)jyEntity.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)jyGameObject.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)jyInput.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)jyScene.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)jySceneManager.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)jySpriteRenderer.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)jyTime.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)jyTransform.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)jyApplication.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)jyComponent.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)jyEntity.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)jyGameObject.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)jyInput.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)jyScene.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)jySceneManager.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)jySpriteRenderer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)jyTime.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)jyTransform.cpp" />
   </ItemGroup>
 </Project>

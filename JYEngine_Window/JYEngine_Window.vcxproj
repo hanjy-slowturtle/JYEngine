@@ -128,10 +128,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="jyPlayer.h" />
     <ClInclude Include="jyPlayScene.h" />
     <ClInclude Include="jyLoadScenes.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="jyPlayer.cpp" />
     <ClCompile Include="jyPlayScene.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
