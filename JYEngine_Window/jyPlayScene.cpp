@@ -15,45 +15,18 @@ namespace jy
 	void PlayScene::Initialize()
 	{
 		{
-			Player* p1 = new Player();
+			Player* bg = new Player();
 			Transform* tr
-				= p1->AddComponent<Transform>();
-			tr->SetPos(800, 450);
+				= bg->AddComponent<Transform>();
+			tr->SetPos(Vector2(0, 0));
 			tr->SetName(L"TR");
 
 			SpriteRenderer* sr
-				= p1->AddComponent<SpriteRenderer>();
+				= bg->AddComponent<SpriteRenderer>();
 			sr->SetName(L"SR");
-			
-			AddGameObject(p1);
-		}
+			sr->ImageLoad(L"C:\\Users\\WD\\source\\repos\\JYEngine\\Resources\\hayoung_wedding_nude.jpg");
 
-		{
-			Player* p1 = new Player();
-			Transform* tr
-				= p1->AddComponent<Transform>();
-			tr->SetPos(300, 450);
-			tr->SetName(L"TR");
-
-			SpriteRenderer* sr
-				= p1->AddComponent<SpriteRenderer>();
-			sr->SetName(L"SR");
-
-			AddGameObject(p1);
-		}
-
-		{
-			Player* p1 = new Player();
-			Transform* tr
-				= p1->AddComponent<Transform>();
-			tr->SetPos(100, 650);
-			tr->SetName(L"TR");
-
-			SpriteRenderer* sr
-				= p1->AddComponent<SpriteRenderer>();
-			sr->SetName(L"SR");
-
-			AddGameObject(p1);
+			AddGameObject(bg);
 		}
 	}
 	void PlayScene::Update()
