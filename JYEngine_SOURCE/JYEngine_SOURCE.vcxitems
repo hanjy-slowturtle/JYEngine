@@ -20,6 +20,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)jyEntity.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)jyGameObject.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)jyInput.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)jyLayer.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)jyMath.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)jyResource.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)jyResources.h" />
@@ -28,6 +29,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)jySpriteRenderer.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)jyTime.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)jyTransform.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)jyEnums.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)jyApplication.cpp" />
@@ -35,6 +37,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)jyEntity.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)jyGameObject.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)jyInput.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)jyLayer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)jyMath.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)jyResource.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)jyResources.cpp" />

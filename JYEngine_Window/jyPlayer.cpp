@@ -1,4 +1,7 @@
 #include "jyPlayer.h"
+#include "jyInput.h"
+#include "jyTransform.h"
+#include "jyTime.h"
 
 namespace jy
 {
@@ -13,6 +16,14 @@ namespace jy
 	void Player::LateUpdate()
 	{
 		GameObject::LateUpdate();
+
+		if (Input::GetKey(eKeyCode::RIGHT))
+		{
+			Transform* tr = GetComponent<Transform>();
+			Vector2 pos = tr->GetPosition();
+			pos.x += 100.0f * Time::DeltaTime();
+			tr->SetPos(pos);
+		}
 	}
 	void Player::Render(HDC hdc)
 	{

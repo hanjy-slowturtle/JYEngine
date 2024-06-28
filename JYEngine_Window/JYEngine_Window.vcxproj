@@ -131,10 +131,12 @@
     <ClInclude Include="jyPlayer.h" />
     <ClInclude Include="jyPlayScene.h" />
     <ClInclude Include="jyLoadScenes.h" />
+    <ClInclude Include="jyTitleScene.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="jyPlayer.cpp" />
     <ClCompile Include="jyPlayScene.cpp" />
+    <ClCompile Include="jyTitleScene.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

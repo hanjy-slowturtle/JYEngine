@@ -4,9 +4,11 @@
     <ClInclude Include="jyPlayScene.h" />
     <ClInclude Include="jyLoadScenes.h" />
     <ClInclude Include="jyPlayer.h" />
+    <ClInclude Include="jyTitleScene.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="jyPlayScene.cpp" />
     <ClCompile Include="jyPlayer.cpp" />
+    <ClCompile Include="jyTitleScene.cpp" />
   </ItemGroup>
 </Project>
