@@ -43,5 +43,7 @@ namespace jy
 		}
 	private:
 		std::vector<Component*> mComponents;
+
+		void initializeTransform();
 	};
 }

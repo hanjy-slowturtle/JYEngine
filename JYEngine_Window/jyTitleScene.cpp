@@ -4,6 +4,7 @@
 #include "jySpriteRenderer.h"
 #include "jyInput.h"
 #include "jySceneManager.h"
+#include "jyObject.h"
 
 namespace jy
 {
@@ -15,20 +16,15 @@ namespace jy
 	}
 	void TitleScene::Initialize()
 	{
-		Scene::Initialize();
-
-		bg = new Player();
-		Transform* tr
-			= bg->AddComponent<Transform>();
-		tr->SetPos(Vector2(0, 0));
-		tr->SetName(L"TR");
+		bg = object::Instantiate<Player>
+			(enums::eLayerType::BackGround, Vector2(100.0f, 100.0f));
 
 		SpriteRenderer* sr
 			= bg->AddComponent<SpriteRenderer>();
 		sr->SetName(L"SR");
 		sr->ImageLoad(L"C:\\Users\\WD\\source\\repos\\JYEngine\\Resources\\heena_nude.jpg");
 
-		AddGameObject(bg, eLayerType::BackGround);
+		Scene::Initialize();
 	}
 	void TitleScene::Update()
 	{

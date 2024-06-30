@@ -5,6 +5,7 @@
 #include "jySpriteRenderer.h"
 #include "jyInput.h"
 #include "jySceneManager.h"
+#include "jyObject.h"
 
 namespace jy
 {
@@ -17,18 +18,15 @@ namespace jy
 	void PlayScene::Initialize()
 	{
 		{
-			bg = new Player();
-			Transform* tr
-				= bg->AddComponent<Transform>();
-			tr->SetPos(Vector2(0, 0));
-			tr->SetName(L"TR");
-
+			bg = object::Instantiate<Player>
+				(enums::eLayerType::BackGround, Vector2(100.0f, 100.0f));
 			SpriteRenderer* sr
 				= bg->AddComponent<SpriteRenderer>();
 			sr->SetName(L"SR");
 			sr->ImageLoad(L"C:\\Users\\WD\\source\\repos\\JYEngine\\Resources\\hayoung_wedding_nude.jpg");
 
-			AddGameObject(bg, eLayerType::BackGround);
+			// 게임 오브젝트 생성 후에 레이어와 게임 오브젝트들의 init 함수를 호출
+			Scene::Initialize();
 		}
 	}
 	void PlayScene::Update()
@@ -55,7 +53,7 @@ namespace jy
 	}
 	void PlayScene::OnExit()
 	{
-		Transform* tr = bg->GetComponent<Transform>();
-		tr->SetPos(Vector2(0, 0));
+		//Transform* tr = bg->GetComponent<Transform>();
+		//tr->SetPosition(Vector2(0, 0));
 	}
 }

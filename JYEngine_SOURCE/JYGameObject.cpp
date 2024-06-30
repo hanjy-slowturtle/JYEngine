@@ -1,10 +1,12 @@
 #include "JYGameObject.h"
 #include "jyTime.h"
+#include "jyTransform.h"
 
 namespace jy
 {
 	GameObject::GameObject()
 	{
+		initializeTransform();
 	}
 	GameObject::~GameObject()
 	{
@@ -41,5 +43,10 @@ namespace jy
 		{
 			comp->Render(hdc);
 		}
+	}
+
+	void GameObject::initializeTransform()
+	{
+		AddComponent<Transform>();
 	}
 }

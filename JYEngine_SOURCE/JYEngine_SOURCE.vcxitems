@@ -30,6 +30,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)jyTime.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)jyTransform.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)jyEnums.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)jyObject.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)jyApplication.cpp" />
