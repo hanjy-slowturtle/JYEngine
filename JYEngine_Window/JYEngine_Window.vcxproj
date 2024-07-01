@@ -128,6 +128,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="jyLoadResources.h" />
     <ClInclude Include="jyPlayer.h" />
     <ClInclude Include="jyPlayScene.h" />
     <ClInclude Include="jyLoadScenes.h" />

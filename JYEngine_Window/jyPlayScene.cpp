@@ -6,6 +6,8 @@
 #include "jyInput.h"
 #include "jySceneManager.h"
 #include "jyObject.h"
+#include "jyTexture.h"
+#include "jyResources.h"
 
 namespace jy
 {
@@ -19,11 +21,11 @@ namespace jy
 	{
 		{
 			bg = object::Instantiate<Player>
-				(enums::eLayerType::BackGround, Vector2(100.0f, 100.0f));
+				(enums::eLayerType::BackGround);
 			SpriteRenderer* sr
 				= bg->AddComponent<SpriteRenderer>();
-			sr->SetName(L"SR");
-			sr->ImageLoad(L"C:\\Users\\WD\\source\\repos\\JYEngine\\Resources\\hayoung_wedding_nude.jpg");
+			graphics::Texture* bg = Resources::Find<graphics::Texture>(L"hayoung");
+			sr->SetTexture(bg);
 
 			// 게임 오브젝트 생성 후에 레이어와 게임 오브젝트들의 init 함수를 호출
 			Scene::Initialize();

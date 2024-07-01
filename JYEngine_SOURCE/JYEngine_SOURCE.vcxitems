@@ -27,6 +27,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)jyScene.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)jySceneManager.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)jySpriteRenderer.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)jyTexture.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)jyTime.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)jyTransform.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)jyEnums.h" />
@@ -45,6 +46,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)jyScene.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)jySceneManager.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)jySpriteRenderer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)jyTexture.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)jyTime.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)jyTransform.cpp" />
   </ItemGroup>

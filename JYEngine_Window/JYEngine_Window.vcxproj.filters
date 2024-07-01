@@ -5,6 +5,7 @@
     <ClInclude Include="jyLoadScenes.h" />
     <ClInclude Include="jyPlayer.h" />
     <ClInclude Include="jyTitleScene.h" />
+    <ClInclude Include="jyLoadResources.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="jyPlayScene.cpp" />

@@ -4,6 +4,7 @@
 #include "framework.h"
 #include "Editor_Window.h"
 #include "../JYEngine_SOURCE/jyApplication.h"
+#include "../JYEngine_Window/jyLoadResources.h"
 #include "../JYEngine_Window/jyLoadScenes.h"
 
 
@@ -140,6 +141,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
    Gdiplus::GdiplusStartup(&gpToken, &gpsi, NULL);
 
    // load Scenes
+   jy::LoadResources();
    jy::LoadScenes();
 
    return TRUE;
