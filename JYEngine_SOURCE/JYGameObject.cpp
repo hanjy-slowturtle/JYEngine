@@ -6,12 +6,17 @@ namespace jy
 {
 	GameObject::GameObject()
 	{
+		mComponents.resize((UINT)enums::eComponentType::End);
 		initializeTransform();
 	}
 	GameObject::~GameObject()
 	{
 		for (Component* comp : mComponents)
 		{
+			if (comp == nullptr)
+			{
+				continue;
+			}
 			delete comp;
 			comp = nullptr;
 		}
@@ -20,6 +25,10 @@ namespace jy
 	{
 		for (Component* comp : mComponents)
 		{
+			if (comp == nullptr)
+			{
+				continue;
+			}
 			comp->Initialize();
 		}
 	}
@@ -27,6 +36,10 @@ namespace jy
 	{
 		for (Component* comp : mComponents)
 		{
+			if (comp == nullptr)
+			{
+				continue;
+			}
 			comp->Update();
 		}
 	}
@@ -34,6 +47,10 @@ namespace jy
 	{
 		for (Component* comp : mComponents)
 		{
+			if (comp == nullptr)
+			{
+				continue;
+			}
 			comp->LateUpdate();
 		}
 	}
@@ -41,6 +58,10 @@ namespace jy
 	{
 		for (Component* comp : mComponents)
 		{
+			if (comp == nullptr)
+			{
+				continue;
+			}
 			comp->Render(hdc);
 		}
 	}

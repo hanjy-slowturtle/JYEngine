@@ -7,6 +7,9 @@
 #include "jyObject.h"
 #include "jyTexture.h"
 #include "jyResources.h"
+#include "jyPlayerScript.h"
+#include "jyCamera.h"
+#include "jyRenderer.h"
 
 namespace jy
 {
@@ -18,16 +21,32 @@ namespace jy
 	}
 	void TitleScene::Initialize()
 	{
-		bg = object::Instantiate<Player>
-			(enums::eLayerType::BackGround);
+		// main camera
+		GameObject* camera = object::Instantiate<GameObject>(enums::eLayerType::None, Vector2(344.0f, 442.0f));
+		Camera* cameraComp = camera->AddComponent<Camera>();
+		renderer::mainCamera = cameraComp;
+
+		mPlayer = object::Instantiate<Player>
+			(enums::eLayerType::Player);
 		SpriteRenderer* sr
-			= bg->AddComponent<SpriteRenderer>();
-		graphics::Texture* bg = Resources::Find<graphics::Texture>(L"heena");
-		sr->SetTexture(bg);
+			= mPlayer->AddComponent<SpriteRenderer>();
+		sr->SetSize(Vector2(3.0f, 3.0f));
+		mPlayer->AddComponent<PlayerScript>();
+
+		graphics::Texture* heena =
+			Resources::Find<graphics::Texture>(L"heena");
+		sr->SetTexture(heena);
+
+		GameObject* bg = object::Instantiate<GameObject>
+			(enums::eLayerType::BackGround);
+		SpriteRenderer* bgSr = bg->AddComponent<SpriteRenderer>();
+		bgSr->SetSize(Vector2(3.0f, 3.0f));
+
+		graphics::Texture* bgTexture =
+			Resources::Find<graphics::Texture>(L"heena");
+		bgSr->SetTexture(bgTexture);
 
 		// 게임 오브젝트 생성 후에 레이어와 게임 오브젝트들의 init 함수를 호출
-		Scene::Initialize();
-
 		Scene::Initialize();
 	}
 	void TitleScene::Update()

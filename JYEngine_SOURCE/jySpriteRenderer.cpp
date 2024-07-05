@@ -1,11 +1,12 @@
 #include "jySpriteRenderer.h"
 #include "jyGameObject.h"
 #include "jyTransform.h"
+#include "jyRenderer.h"
 
 namespace jy
 {
 	SpriteRenderer::SpriteRenderer()
-		: Component()
+		: Component(enums::eComponentType::SpriteRenderer)
 		, mTexture(nullptr)
 		, mSize(Vector2::One)
 	{
@@ -31,6 +32,7 @@ namespace jy
 
 		Transform* tr = GetOwner()->GetComponent<Transform>();
 		Vector2 pos = tr->GetPosition();
+		pos = renderer::mainCamera->CalculatePosition(pos);
 
 		if (mTexture->GetTextureType() == graphics::Texture::eTextureType::Bmp)
 		{

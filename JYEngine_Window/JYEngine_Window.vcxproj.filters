@@ -6,10 +6,12 @@
     <ClInclude Include="jyPlayer.h" />
     <ClInclude Include="jyTitleScene.h" />
     <ClInclude Include="jyLoadResources.h" />
+    <ClInclude Include="jyPlayerScript.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="jyPlayScene.cpp" />
     <ClCompile Include="jyPlayer.cpp" />
     <ClCompile Include="jyTitleScene.cpp" />
+    <ClCompile Include="jyPlayerScript.cpp" />
   </ItemGroup>
 </Project>

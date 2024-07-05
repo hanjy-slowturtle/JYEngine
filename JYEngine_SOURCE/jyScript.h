@@ -1,19 +1,17 @@
 #pragma once
-#include "../JYEngine_SOURCE/jyScene.h"
+#include "jyComponent.h"
 
 namespace jy
 {
-	class TitleScene : public Scene
+	class Script : public Component
 	{
 	public:
-		TitleScene();
-		~TitleScene();
+		Script();
+		~Script();
 
 		void Initialize() override;
 		void Update() override;
 		void LateUpdate() override;
 		void Render(HDC hdc) override;
-	private:
-		class Player* mPlayer;
 	};
 }
